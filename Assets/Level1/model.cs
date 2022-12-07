@@ -36,5 +36,5 @@ public class model : MonoBehaviour
         return raycastHit.collider != null ;
     }
 
-  
+  // duong
 }
