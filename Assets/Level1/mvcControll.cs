@@ -28,7 +28,7 @@ public class mvcControll : MonoBehaviour
          model.GetComponent<model>().transform.Translate(Vector2.right * model.GetComponent<model>().speed * Time.deltaTime);
          
         // doi huong nhan vat
-        model.GetComponent<model>().transform.localScale = new Vector3(8,8,8);
+        model.GetComponent<model>().transform.localScale = new Vector3(1,1,1);
 
          if(!model.GetComponent<model>().isGrounded() && model.GetComponent<model>().onWall() ){
               model.GetComponent<model>().body.gravityScale = 0;
@@ -48,7 +48,7 @@ public class mvcControll : MonoBehaviour
         model.GetComponent<model>().transform.Translate(Vector2.left * model.GetComponent<model>().speed * Time.deltaTime);
 
         // doi huong nhan vat
-        model.GetComponent<model>().transform.localScale = new Vector3(-8,8,8);
+        model.GetComponent<model>().transform.localScale = new Vector3(-1,1,1);
         }
          else {
            model.GetComponent<model>().wallJumpCooldown += Time.deltaTime;
