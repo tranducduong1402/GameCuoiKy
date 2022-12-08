@@ -72,11 +72,11 @@ public class mvcControll : MonoBehaviour
               model.GetComponent<model>().transform.Translate(Vector2.up * model.GetComponent<model>().jump * Time.deltaTime);
          }
         else if (!model.GetComponent<model>().isGrounded() && model.GetComponent<model>().onWall() ){
-            if(move == 0 ){
-            model.GetComponent<model>().body.velocity = new Vector2(-Mathf.Sign(model.GetComponent<model>().transform.localScale.x ) *10, 0);
-            model.GetComponent<model>().transform.localScale = new Vector3(-Mathf.Sign(model.GetComponent<model>().transform.localScale.x ),model.GetComponent<model>().transform.localScale.y,model.GetComponent<model>().transform.localScale.z );
-            }
-             else 
+            // if(move == 0 ){
+            // model.GetComponent<model>().body.velocity = new Vector2(-Mathf.Sign(model.GetComponent<model>().transform.localScale.x ) *10, 0);
+            // model.GetComponent<model>().transform.localScale = new Vector3(-Mathf.Sign(model.GetComponent<model>().transform.localScale.x ),model.GetComponent<model>().transform.localScale.y,model.GetComponent<model>().transform.localScale.z );
+            // }
+            //  else 
             model.GetComponent<model>().body.velocity = new Vector2(-Mathf.Sign (model.GetComponent<model>().transform.localScale.x ) *3, 2);
 
             model.GetComponent<model>().wallJumpCooldown = 0;
