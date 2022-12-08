@@ -9414,7 +9414,7 @@ MonoBehaviour:
     m_Bits: 512
   body: {fileID: 0}
   speed: 5
-  jump: 15
+  jump: 200
   wallJumpCooldown: 0
   grounded: 0
 --- !u!61 &1506213610
