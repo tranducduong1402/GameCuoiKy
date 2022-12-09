@@ -11,18 +11,19 @@ public class mvcControll : MonoBehaviour
     {
      m_model = FindObjectOfType<model>();
      m_view = FindObjectOfType<View>();
-    }
+    }  
+    public GameObject model;
+    private GameObject View;
 
-    void Update()
+
+     void Update()
     {
         // set animation
         move =  Input.GetAxis("Horizontal"); // lay phim
         m_model.setBool("Run" , move !=0);
         m_model.setBool("grounded", model.GetComponent<model>().isGrounded());
     }
-    
-    public GameObject model;
-    public GameObject View;
+
     public void moveRight () {
         if(model.GetComponent<model>().wallJumpCooldown < 0.2f) {
          model.GetComponent<model>().transform.Translate(Vector2.right * model.GetComponent<model>().speed * Time.deltaTime);
@@ -56,7 +57,7 @@ public class mvcControll : MonoBehaviour
     }
 
      public void moveUp () {
-
+     model.GetComponent<model>().transform.Translate(Vector2.up * model.GetComponent<model>().jump * Time.deltaTime);
         if( model.GetComponent<model>().wallJumpCooldown < 0.2f) {
        
         // wall logic
@@ -68,10 +69,10 @@ public class mvcControll : MonoBehaviour
                  model.GetComponent<model>().body.gravityScale = 4;
             }
 
-         if(model.GetComponent<model>().isGrounded()) {
-              model.GetComponent<model>().transform.Translate(Vector2.up * model.GetComponent<model>().jump * Time.deltaTime);
-         }
-        else if (!model.GetComponent<model>().isGrounded() && model.GetComponent<model>().onWall() ){
+        //  if(model.GetComponent<model>().isGrounded()) {
+            
+        //  }
+        if (!model.GetComponent<model>().isGrounded() && model.GetComponent<model>().onWall() ){
             if(move == 0 ){
             model.GetComponent<model>().body.velocity = new Vector2(-Mathf.Sign(model.GetComponent<model>().transform.localScale.x ) *10, 0);
             model.GetComponent<model>().transform.localScale = new Vector3(-Mathf.Sign(model.GetComponent<model>().transform.localScale.x ),model.GetComponent<model>().transform.localScale.y,model.GetComponent<model>().transform.localScale.z );
