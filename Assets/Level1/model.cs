@@ -14,7 +14,7 @@ public class model : MonoBehaviour
     public float jump;
     public float wallJumpCooldown;
     public bool grounded;
-  private float horizontalInput;
+    private float horizontalInput;
 
 
     void Awake()
