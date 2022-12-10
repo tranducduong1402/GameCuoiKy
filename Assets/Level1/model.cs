@@ -14,9 +14,10 @@ public class model : MonoBehaviour
     public float jump;
     public float wallJumpCooldown;
     public bool grounded;
+    private float horizontalInput;
 
 
-    void Start()
+    void Awake()
     {
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
@@ -30,14 +31,17 @@ public class model : MonoBehaviour
 
     public bool isGrounded()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
+          RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
         return raycastHit.collider != null;
     }
     public bool onWall()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, wallLayer);
+         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, wallLayer);
         return raycastHit.collider != null;
     }
 
-    // Tuan test
+// public bool  canAttack() {
+//         return  View.GetComponent<View>().move == 0 && model.GetComponent<model>().isGrounded() && !model.GetComponent<model>().onWall(); 
+//     }
+
 }
