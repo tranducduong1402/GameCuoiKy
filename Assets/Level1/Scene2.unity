@@ -398,7 +398,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: 0
   model: {fileID: 978994847}
-  View: {fileID: 0}
 --- !u!4 &206090207
 Transform:
   m_ObjectHideFlags: 0
@@ -988,6 +987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 206090205}
+  attackController: {fileID: 0}
   move: 0
 --- !u!4 &583620825
 Transform:
@@ -1920,6 +1920,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 2
+  firePoint: {fileID: 0}
+  fireballs: []
 --- !u!95 &978994849
 Animator:
   serializedVersion: 4
@@ -1960,7 +1962,7 @@ MonoBehaviour:
     m_Bits: 512
   body: {fileID: 0}
   speed: 5
-  jump: 300
+  jump: 15
   wallJumpCooldown: 0
   grounded: 1
 --- !u!61 &978994851

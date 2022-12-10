@@ -57,9 +57,9 @@ public class mvcControll : MonoBehaviour
     }
 
      public void moveUp () {
-     model.GetComponent<model>().transform.Translate(Vector2.up * model.GetComponent<model>().jump * Time.deltaTime);
         if( model.GetComponent<model>().wallJumpCooldown < 0.2f) {
-       
+            model.GetComponent<model>().transform.Translate(Vector2.up * model.GetComponent<model>().jump * Time.deltaTime);
+
         // wall logic
             if(!model.GetComponent<model>().isGrounded() && model.GetComponent<model>().onWall() ){
               model.GetComponent<model>().body.gravityScale = 0;
