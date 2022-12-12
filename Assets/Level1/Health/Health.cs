@@ -11,7 +11,8 @@ public class Health : MonoBehaviour
     private Animator anim;
     private bool dead;
 
-    private void Awake()
+    [SerializeField] private AudioClip deathSound;
+   private void Awake()
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
@@ -25,6 +26,15 @@ public class Health : MonoBehaviour
             // hurt
             anim.SetTrigger("hurt");
         }
+<<<<<<< HEAD
+      else {
+        if(!dead){
+           anim.SetTrigger("die");
+           GetComponent<model>().enabled = false;
+           dead = true;
+            SoundManager.instance.PlaySound(deathSound);
+        }     
+=======
         else
         {
             if (!dead)
@@ -37,6 +47,7 @@ public class Health : MonoBehaviour
 
         }
     }
+>>>>>>> 3f29d76f422cb173b07f5490dd7dc979dae137bf
 
     public void AddHealth(float _value)
     {
